@@ -1,0 +1,32 @@
+from currency_converter import CurrencyConverter
+import tkinter as tk
+c = CurrencyConverter()
+print(c.convert(12, "USD","INR"))
+
+window = tk.Tk()
+window.geometry("500x360")
+window.title("Currency Converter")
+
+def Clicked():
+    amount = int(entry1.get())
+    cur1 = entry2.get()
+    cur2 = entry3.get()
+    data =  c.converter(amount,cur1,cur2)
+    Label4 = tk.Label(window,text=data,font = "Times 16 bold").place(x = 200, y = 300)
+
+Label = tk.Label(window, text= "CurrencyConverter", font = "Times 20 bold").place(x = 120, y = 40)
+
+Label1 = tk.Label(window, text = "Enter Amount Here: ",font = "Times 16 bold").place(x = 70, y = 100)
+entry1 = tk.Entry(window)
+
+Label2 = tk.Label(window, text = "Enter your Currency Here: ",font = "Times 16 bold").place(x = 90, y = 100)
+entry2 = tk.Entry(window)
+
+Label3 = tk.Label(window, text = "Enter your desired currency: ",font = "Times 16 bold").place(x = 90, y = 100)
+entry3 = tk.Entry(window)
+
+button = tk.Button(window,text ="click",font = "Times 16 bold").place (x = 220, y = 250)
+entry1.place(x = 270, y = 105)
+entry2.place(x = 270, y = 105)
+entry3.place(x = 270, y = 105)
+window.mainloop()
